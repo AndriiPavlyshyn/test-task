@@ -34,8 +34,11 @@
 
 	body,
 	html {
-	  font-family: var(--font-inter);
-	  min-height: 100vh;
+	  @apply font-inter min-h-screen;
+	}
+
+	::selection {
+	  @apply bg-accent text-white;
 	}
   }
 }
