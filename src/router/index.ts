@@ -1,3 +1,4 @@
+import {usePageTitle}                                from '@/composables/usePageTitle.ts';
 import {createRouter, createWebHistory, type Router} from 'vue-router';
 
 const router: Router = createRouter({
@@ -24,6 +25,10 @@ const router: Router = createRouter({
       component: () => import('../views/TwoThings.vue'),
     },
   ],
+})
+
+router.beforeEach((to, from) => {
+  document.title = usePageTitle(to.name) || 'Test task';
 })
 
 export default router

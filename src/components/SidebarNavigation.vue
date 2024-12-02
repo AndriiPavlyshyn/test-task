@@ -1,7 +1,14 @@
 <template>
-	<nav class="navigation">
-		<ul class="navigation__list grid gap-[var(--px-15)]">
-			<li v-for="item in navItems" class="navigation__item flex">
+	<nav class="navigation relative h-full">
+		<ul
+			class="
+				navigation__list
+				grid
+				tablet-large:sticky
+				tablet-large:top-[var(--px-15)]
+				gap-[var(--px-15)]
+			">
+			<li :key="item.url" v-for="item in navItems" class="navigation__item flex">
 				<RouterLink
 					class="
 						navigation__link
@@ -28,23 +35,8 @@
 </template>
 
 <script setup lang="ts">
-	import type {NavigationItem} from '@/types/types.ts';
 
-
-	const navItems: NavigationItem[] = [
-		{
-			url: 'mirror',
-			title: 'Challenge 1: Mirror, Mirror on the Screen!'
-		},
-		{
-			url: 'lucky',
-			title: 'Challenge 2: I’m feeling lucky!'
-		},
-		{
-			url: 'two-things',
-			title: 'Challenge 3: Only two things in life are guaranteed…'
-		},
-	]
+import {navItems} from '@/navigation.ts';
 </script>
 
 <style scoped>
