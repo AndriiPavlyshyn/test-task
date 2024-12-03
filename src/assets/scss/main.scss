@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400,900&display=swap');
+
+@import 'animations/fade-in-out';
+
+@layer main {
+  :root {
+	// Colors
+	--color-accent            : 255 0 78;
+	--color-grey    		  : 231 231 231;
+	--color-white  		      : white;
+
+	// Fonts
+	--font-inter              : 'Inter', sans-serif;
+
+	// Font sizes
+	--px-5                    : 0.313rem;
+	--px-6                    : 0.375rem;
+	--px-8                    : 0.5rem;
+	--px-9                    : 0.563rem;
+	--px-10                   : 0.625rem;
+	--px-11                   : 0.688rem;
+	--px-12                   : 0.75rem;
+	--px-13                   : 0.813rem;
+	--px-14                   : 0.875rem;
+	--px-15                   : 0.938rem;
+	--px-16                   : 1rem;
+	--px-20                   : 1.25rem;
+
+	// Radius
+	--radius                  : 4px;
+	--radius-lg               : 10px;
+
+	body,
+	html {
+	  @apply font-inter min-h-screen;
+	}
+
+	::selection {
+	  @apply bg-accent text-white;
+	}
+  }
+}
